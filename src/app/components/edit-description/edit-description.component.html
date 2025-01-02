@@ -1,0 +1,10 @@
+<h2 class="marg">Beschreibung ändern</h2>
+<hr class="hr-context">
+<form data-cy="edit-description-form" (ngSubmit)="onSubmit()" class="edit-description">
+    <mat-form-field>
+        <mat-label>Neue Beschreibung</mat-label>
+        <textarea data-cy="edit-description-input" matInput [(ngModel)]="edit.description" name="text" required></textarea>
+    </mat-form-field>
+
+  <button data-cy="edit-description-button" class="marg marg-bottom marge-top button" mat-raised-button color="primary" type="submit">Speichern</button>
+</form>

@@ -1,0 +1,5 @@
+<app-header data-cy="header" (isMenuOpen)="onMenuOpenChanged($event)"></app-header>
+<div class="main-container">
+    <app-project-list data-cy="project-list" id="projekt-list" *ngIf="isMenuOpenValue"></app-project-list>
+    <app-main-content data-cy="main-content" class="main-content" [ngClass]="{'full-width': !isMenuOpenValue}"></app-main-content>
+</div>

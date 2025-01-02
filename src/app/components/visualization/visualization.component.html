@@ -1,0 +1,35 @@
+<div *ngIf="selectedProject" class="visualization-container">
+    <div class="gallery-container">
+        
+        <!-- <div class="thumbnails_and_selected_image"> -->
+        <div data-cy="visualization-gallery" class="gallery">
+            <div *ngFor="let image of images" class="thumbnail" (click)="selectImage(image)" [class.selected-image]="isSelectedImage(image)">
+                <img data-cy="visualization-gallery-img" id="visualization-gallery" [attr.src]="image.image_url | secure | async" [alt]="image.name"/>
+                <div data-cy="visualization-gallery-img-download"  class="download-icon" (click)="downloadImg(image)"><mat-icon>download</mat-icon></div>
+            </div>
+        </div>
+    
+        <div class="selcted-image-overlays-container">            
+            <div data-cy="visualization-selected-img-container" *ngIf="selectedImage" class="selected-image-container">
+                <img data-cy="visualization-selected-img" #imageElement [attr.src]="selectedImage.image_url | secure | async" [alt]="selectedImage.name" (load)="reloadLables()"/>
+                <label data-cy="visualization-selected-img-overlay" [class.selected-overlay]="isSelected(overlay)" id="overlays"  *ngFor="let overlay of overlays" [ngStyle]="getOverlayStyle(imageElement, overlay)" (click)="selectOverlay(overlay, true)">
+                </label>
+            </div>
+        </div>
+       <!--  </div> -->
+
+        <div class="overlays-container" *ngIf="selectedImage">
+            <button class="call-edit-button" mat-raised-button color="primary" (click)="goToEditView()">Ergebnis Bearbeiten</button>
+            <h2>Ergebnisse:</h2> 
+            <mat-list data-cy="visualization-overlay-list" class="overlays-mat-list">
+                <mat-list-item data-cy="visualization-overlay-item" id="{{overlay.id}}" [class.selected-overlay-list]="isSelected(overlay)" class="mat-list-item" *ngFor="let overlay of overlays" (click)="selectOverlay(overlay, false)">
+                    <span data-cy="visualization-overlay-text" matListItemTitle>{{ overlay.text }}</span>
+                    <div data-cy="visualization-overlay-change-button"  class="edit-icon" (click)="changeOverlay(overlay)"><mat-icon class="edit-icon">edit</mat-icon></div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+</div>
+<div data-cy="visualization-project-not-selected" *ngIf="!selectedProject">
+<h1>Wähle bitte ein Projekt aus.</h1>
+</div>

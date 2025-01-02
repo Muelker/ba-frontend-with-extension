@@ -1,0 +1,19 @@
+<div class="top-container">
+    <div class="login-container" style="text-align: center;">
+        <form data-cy="login-form" id="login-form" (ngSubmit)="onLogin()"  #projectForm="ngForm">
+            <div>
+                <label data-cy="login-name-lable" id="login-username">Benutzername:</label>
+                <br>
+                <input data-cy="login-name-input" type="text" [(ngModel)]="loginData.username" name="username" required>
+            </div>
+            <div>
+                <label data-cy="login-password-lable" id="login-password">Passwort:</label>
+                <br>
+                <input data-cy="login-password-input" type="password" [(ngModel)]="loginData.password" name="password" required>
+            </div>
+            <button data-cy="login-submit" mat-raised-button color="primary" type="submit" [disabled]="!projectForm.valid">Anmelden</button>   
+        </form>
+        <br>
+        <a data-cy="login-to-register" (click)="goToRegister()" style="color: rgb(141, 174, 16)">Noch kein Konto?</a>
+    </div>
+</div>

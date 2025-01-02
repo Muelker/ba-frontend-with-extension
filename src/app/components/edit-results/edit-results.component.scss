@@ -1,0 +1,640 @@
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+kbd {
+    background-color: #e7e7e7;
+    border: 2px solid#b3b3b3;
+    border-radius: 2px;
+    padding: 0px 4px;
+}
+
+* {
+    scrollbar-width: thin;
+}
+
+.logo {
+    height: 46px;
+    width: 135px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.header-toolbar {
+    height: 60px;
+}
+
+@media screen and (max-width: 800px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 100px 50px 75px auto;
+        gap: 5px;
+    }
+
+    .resTitle {
+        display: none;
+        color: #17365c;
+        text-align: center;
+    }
+
+    .interaction {
+        grid-area: 2 / 1;
+        height: 50px;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        align-self: center;
+    }
+
+    .textInput {
+        display: none;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .textInput input {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        height: 90%;
+        width: 75%;
+        border-radius: 4px;
+    }
+
+    .textInput button {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 23%;
+        height: 100%;
+    }
+
+    .textInput button:hover {
+        background-color: #b3b3b3;
+    }
+
+    .confirmation {
+        display: none;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .confirmation label {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        text-align: center;
+        border-radius: 4px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 65%;
+        height: 100%;
+        float: left;
+    }
+
+    .confirmation button {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 15%;
+        height: 100%;
+        float: left;
+        margin-left: 2.5%;
+    }
+
+    .confirmation button:hover {
+        background-color: #b3b3b3;
+    }
+
+    .nextStepDisplay {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        text-align: center;
+        border-radius: 4px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .editSelection {
+        display: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .editSelection button {
+        color: #e7e7e7;
+        background-color: #17365c;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 33%;
+        height: 50px;
+        float: left;
+        cursor: pointer;
+    }
+
+    .editSelection button:not(:last-child) {
+        margin-right: 0.5%;
+    }
+    
+    .editSelection button:hover {
+        background-color: #37567c;
+    }
+
+    .newTextControl {
+        display: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .newTextControl button {
+        color: #e7e7e7;
+        background-color: #17365c;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 33%;
+        height: 50px;
+        float: left;
+        cursor: pointer;
+    }
+    
+    .newTextControl button:not(:last-child) {
+        margin-right: 0.5%;
+    }
+
+    .newTextControl button:hover {
+        background-color: #37567c;
+    }
+
+    .editBoxControl {
+        display: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .editBoxControl button {
+        color: #e7e7e7;
+        background-color: #17365c;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 33%;
+        height: 50px;
+        float: left;
+        cursor: pointer;
+    }
+
+    .editBoxControl button:hover {
+        background-color: #37567c;
+    }
+
+    .editBoxControl button:not(:last-child) {
+        margin-right: 0.5%;
+    }
+
+    .exit {
+        display: block;
+        grid-area: 1 / 1;
+    }
+
+    .exit button {
+        color: #e7e7e7;
+        background-color: #17365c;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        height: 50px;
+        margin-bottom: 2px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .exit button:hover {
+        background-color: #37567c;
+    }
+
+    .resultButtons {
+        grid-area: 3 / 1;
+        width: 100%;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    .resultButtons button {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        height: 45px;
+        margin-right: 2px;
+        width: 150px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .resultButtons button.active {
+        border: 4px solid lime;
+    }
+
+    .resultButtons button:hover {
+        background-color: #b3b3b3;
+    }
+
+    .resultButtons button.newText {
+        background-color: #17365c;
+        color: #e7e7e7;
+        margin-right: 0px;
+    }
+
+    .resultButtons button.newText:hover {
+        background-color: #37567c;
+    }
+
+    .canvasWrapper {
+        position: relative;
+        grid-area: 4 / 1;
+        margin-bottom: 5px;
+    }
+
+    .myCanvas {
+        position: absolute;
+        border: 2px solid #17365c;
+    }
+    
+    .myPlan {
+        position: absolute;
+        border: 2px solid #17365c;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: 150px 350px auto;
+        grid-template-rows: 60px auto;
+        gap: 5px;
+        margin: 5px;
+    }
+
+    .resTitle {
+        grid-area: 1 / 1;
+        color: #17365c;
+        text-align: center;
+    }
+
+    .interaction {
+        grid-area: 1 / 2;
+        height: 50px;
+        width: 100%;
+        display: inline-block;
+        
+    }
+
+    .textInput {
+        display: none;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .textInput input {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        height: 90%;
+        width: 75%;
+        border-radius: 4px;
+    }
+
+    .textInput button {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 20%;
+        height: 100%;
+    }
+
+    .textInput button:hover {
+        background-color: #b3b3b3;
+    }
+
+    .confirmation {
+        display: none;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .confirmation label {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        text-align: center;
+        border-radius: 4px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 65%;
+        height: 100%;
+        float: left;
+    }
+
+    .confirmation button {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 15%;
+        height: 100%;
+        float: left;
+        margin-left: 2.5%;
+    }
+
+    .confirmation button:hover {
+        background-color: #b3b3b3;
+    }
+
+    .nextStepDisplay {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        text-align: center;
+        border-radius: 4px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .editSelection {
+        display: none;
+    }
+
+    .editSelection button {
+        color: #e7e7e7;
+        background-color: #17365c;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 100px;
+        height: 50px;
+        float: left;
+        margin-right: 2px;
+        cursor: pointer;
+    }
+    
+    .editSelection button:hover {
+        background-color: #37567c;
+    }
+
+    .newTextControl {
+        display: none;
+    }
+
+    .newTextControl button {
+        color: #e7e7e7;
+        background-color: #17365c;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 100px;
+        height: 50px;
+        float: left;
+        margin-right: 2px;
+        cursor: pointer;
+    }
+
+    .newTextControl button:hover {
+        background-color: #37567c;
+    }
+
+    .editBoxControl {
+        display: none;
+    }
+
+    .editBoxControl button {
+        color: #e7e7e7;
+        background-color: #17365c;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 100px;
+        height: 50px;
+        float: left;
+        margin-right: 2px;
+        cursor: pointer;
+    }
+
+    .editBoxControl button:hover {
+        background-color: #37567c;
+    }
+
+    .exit {
+        grid-area: 1 / 3;
+        width: 100%;
+        height: 50px;
+    }
+
+    .exit button {
+        color: #e7e7e7;
+        background-color: #17365c;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        width: 125px;
+        height: 50px;
+        float: right;
+        margin-left: 2px;
+        cursor: pointer;
+    }
+
+    .exit button:hover {
+        background-color: #37567c;
+    }
+
+    .resultButtons {
+        grid-area: 2 / 1;
+        overflow-y: auto;
+        white-space: nowrap;
+        scrollbar-width: thin;
+    }
+
+    .resultButtons button {
+        color: #17365c;
+        background-color: #e7e7e7;
+        border: 2px solid #17365c;
+        border-radius: 4px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 2px;
+        width: 95%;
+        display: block;
+        cursor: pointer;
+    }
+
+    .resultButtons button.active {
+        border: 4px solid lime;
+    }
+
+    .resultButtons button:hover {
+        background-color: #b3b3b3;
+    }
+
+    .resultButtons button.newText {
+        background-color: #17365c;
+        color: #e7e7e7;
+    }
+
+    .resultButtons button.newText:hover {
+        background-color: #37567c;
+    }
+
+    .canvasWrapper {
+        position: relative;
+        grid-area: 2 / 2 / 2 / 3 ;
+    }
+
+    .myCanvas {
+        position: absolute;
+        border: 2px solid #17365c;
+    }
+
+    .myPlan {
+        position: absolute;
+        //border: 2px solid #17365c;
+    }
+}
+
+.navigation {
+    background-color: #e7e7e7;
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.navigation button {
+    display: inline-block;
+    color: #17365c;
+    border: 2px solid #17365c;
+    border-radius: 4px;
+    margin: 5px;
+    margin-right: 0px;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+} 
+
+
+.navigation img {
+    height: 38.6px;
+    width: 112.4px;
+    margin: 5px;
+    float: right;
+}
+
+.result {
+    position: absolute;
+    border: 2px solid #e6332a;
+    background: transparent;
+}
+
+.result .resultText {
+    visibility: hidden;
+    width: 120px;
+    height: 20px;
+    font-size: larger;
+    border: 2px solid #a3a3a3;    
+    border-radius: 4px;
+    color: #17365c;
+    background-color: #b3b3b3;
+    text-align: center;
+
+    z-index: 1;
+    position: absolute;
+}
+
+.result:hover .resultText {
+    visibility: visible;
+}
+
+.activeResult {
+    position: absolute;
+    border: 2px solid lime;
+    background: transparent;
+}
+
+.activeResult .resultText {
+    visibility: hidden;
+    width: 120px;
+    height: 20px;
+    font-size: larger;
+    border: 2px solid #a3a3a3;    
+    border-radius: 4px;
+    color: #17365c;
+    background-color: #b3b3b3;
+    text-align: center;
+
+    z-index: 1;
+    position: absolute;
+}
+
+.activeResult:hover .resultText {
+    visibility: visible;
+}
+
+.invisible {
+    display: none;
+}
+
+.control {
+    position: absolute;
+    display: none;
+    width: 220px;
+    height: auto;
+    z-index: 1;
+}
+
+.control button {
+    color: #e7e7e7;
+    background-color: #17365c;
+    border: 2px solid #17365c;
+    width: 100px;
+    height: 24px;
+    margin-left: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.control button:hover {
+    background-color: #37567c;
+}
+
+.textInputHovering {
+    position: absolute;
+    display: none;
+    height: 30px;
+    width: 300px;
+    z-index: 1;
+}
+
+.textInputHovering input {
+    color: #17365c;
+    background-color: #e7e7e7;
+    border: 2px solid #17365c;
+    height: 90%;
+    width: 75%;
+    border-radius: 4px;
+}
+
+.textInputHovering button {
+    color: #17365c;
+    background-color: #e7e7e7;
+    border: 2px solid #17365c;
+    border-radius: 4px;
+    width: 20%;
+    height: 100%;
+}
+
+.textInputHovering button:hover {
+    background-color: #b3b3b3;
+}

@@ -1,0 +1,46 @@
+import { Component, Inject } from '@angular/core';
+import { ProjectService } from '../../services/project.service';
+import { CommonModule } from '@angular/common';
+
+import { AiModel } from '../../interfaces/ai_model';
+
+import { FormsModule } from '@angular/forms';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialogRef, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip'; 
+
+import { catchError, tap } from 'rxjs/operators';
+import { of } from 'rxjs'
+
+@Component({
+  selector: 'app-edit-description',
+  standalone: true,
+  imports: [MatButtonModule, MatFormFieldModule, MatDialogModule, MatInputModule, MatSelectModule, MatTooltipModule, FormsModule, CommonModule],
+  templateUrl: './edit-image-notes.component.html',
+  styleUrl: './edit-image-notes.component.scss'
+})
+export class EditImageNotesComponent {
+  edit = { notes: ''};
+
+
+  constructor(private projectService: ProjectService, public dialogRef: MatDialogRef<EditImageNotesComponent>, @Inject(MAT_DIALOG_DATA) public data: any,  private snackBar: MatSnackBar) {}
+
+  ngOnInit(): void {
+  
+  }
+
+  onSubmit(): void {
+    //Endpunkt ansprechen um die Änderungen zu speichern
+
+    this.closeDialog();
+  }
+
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
+}

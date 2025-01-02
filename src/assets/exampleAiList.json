@@ -1,0 +1,17 @@
+[
+    {
+        "id" : 1,
+        "name" : "Krass",
+        "description" : "Krank"
+    },
+    {
+        "id" : 2,
+        "name" : "Mega",
+        "description" : "Meeeeegoo"
+    },
+    {
+        "id" : 3,
+        "name" : "Hammer",
+        "description" : "Haaamiiiiii"
+    }
+]

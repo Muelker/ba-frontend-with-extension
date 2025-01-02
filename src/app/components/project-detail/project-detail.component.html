@@ -1,0 +1,77 @@
+<div class="space-left">
+  <div *ngIf="selectedProject">
+    <div class="flex-container">
+      <table class="project-details-table">
+        <tr>
+          <td data-cy="project-name-lable" class="fixed-names-row-size">
+            <h3>Projektname:</h3> </td>
+          <td data-cy="project-name">{{ selectedProject.name }}</td>
+          <button data-cy="project-details-button-name-edit" class="edit-button" aria-label="Clear"
+            (click)="editName(selectedProject)" mat-icon-button color="accent">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </tr>
+
+        <tr *ngIf="selectedProject.description!=''">
+          <td data-cy="project-description-lable" class="fixed-names-row-size">
+            <h3>Beschreibung:</h3>
+          </td>
+          <td data-cy="project-description">{{ selectedProject.description }}</td>
+          <button data-cy="project-details-button-discription-edit" class="edit-button" aria-label="Clear"
+              (click)="editDescription(selectedProject)" mat-icon-button color="accent">
+              <mat-icon>edit</mat-icon>
+            </button>
+        </tr>
+        <!-- <tr>
+          <td data-cy="project-AImodel-lable" class="fixed-names-row-size aimodel-lable">AIModel:</td>
+          <td data-cy="project-Aimodel">{{ aiModelName }}</td>
+        </tr> -->
+        <tr>
+          <td data-cy="project-isvisualized-lable" class="fixed-names-row-size visualized-lable"><h3>Visualisierung:</h3></td>
+          <td data-cy="project-isvisualized-no"
+            *ngIf="!isProjectVisualized(selectedProject) && !isProjectPartlyVisualized(selectedProject)">Nicht
+            visualisiert 
+          </td>
+          <td data-cy="project-isvisualized-yes"
+            *ngIf="isProjectVisualized(selectedProject) && !isProjectPartlyVisualized(selectedProject)">Visualisiert
+          </td>
+          <td data-cy="project-isvisualized-partly" *ngIf="isProjectPartlyVisualized(selectedProject) ">Teilweise
+            visualisiert
+          </td>
+          <button data-cy="project-visualize-button-yes" class="vis-button" (click)="startVisualization()"
+              mat-raised-button color="accent">
+              <mat-icon>autorenew</mat-icon>
+              Visualisieren
+            </button>
+        </tr>
+      </table>
+    </div>
+    <div class="gallery-container">
+      <div data-cy="project-gallery" class="gallery">
+        <div *ngFor="let image of images" class="delete-image-container">
+          <img [attr.src]="image.image_url | secure | async" [alt]="image.name" />
+          <button mat-mini-fab color="accent" data-cy="project-gallery-img-delete" class="delete-icon"
+            (click)="openDialog(image)"><mat-icon>close</mat-icon></button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <form data-cy="project-img-upload-form" name="images" (ngSubmit)="uploadImage()">
+      <button type="button" mat-raised-button color="accent" (click)="fileInput.click()"><mat-icon>attach_file</mat-icon>File(s) wählen</button>
+      <input hidden data-cy="project-img-upload-input" #fileInput name="images" type="file" (change)="onFilesSelected($event)" multiple
+        accept="image/jpeg,image/jpg,image/png">
+      <button data-cy="project-img-upload-button" mat-raised-button color="accent" type="submit">
+        <mat-icon>cloud_upload</mat-icon>
+        Bild(er) hochladen
+      </button>
+      <mat-list>
+        <mat-list-item *ngFor="let file of selectedFiles">{{file.name}}
+        </mat-list-item>
+      </mat-list>
+    </form>
+    <app-chain-config [available]="aiChainModules" (getSelectedEvent)="setAiSelected($event)"></app-chain-config>
+  </div>
+  <div data-cy="project-details-project-not-selecte" *ngIf="!selectedProject">
+    <h1>Wähle bitte ein Projekt aus.</h1>
+  </div>
+</div>

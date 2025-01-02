@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'custom-theme';
+
+
+body { 
+    overflow: hidden;
+    height: 100vh;
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+html {
+    overflow: hidden !important;
+}
+
+
+
+.create-project mat-form-field {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.hr-context { 
+    margin: 0px;
+    margin-bottom: 15px;
+    color: #17365c;
+} 
+
+
+
+//workaround vor material bug https://github.com/angular/components/issues/27118
+.mat-mdc-button-touch-target {
+    height: inherit !important;
+}
+
+* {
+    scrollbar-width: thin;
+}

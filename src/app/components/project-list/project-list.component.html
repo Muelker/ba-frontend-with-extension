@@ -1,0 +1,24 @@
+<button data-cy="projectlist-create-project-button" id="create-project" class="marg" mat-raised-button color="primary" (click)="openCreateProjectDialog()">Neues Projekt</button>
+
+<mat-form-field data-cy="projectlist-searchbar-form" class="search-form-field">
+  <mat-label data-cy="projectlist-searchbar-lable">Suchen</mat-label>
+  <input data-cy="projectlist-searchbar-input" matInput type="text" (keyup)="searchProjects(value)" [(ngModel)]="value">
+  @if (value) {
+    <button data-cy="projectlist-searchbar-button-search" matSuffix mat-icon-button aria-label="Clear" (click)="searchProjectsCancle()" class="search-button-clear">
+      <mat-icon>clear</mat-icon>
+    </button>
+  }
+</mat-form-field>
+
+
+<div class="project-list-container">
+  <mat-list data-cy="projectlist-list" class="project-mat-list">
+    <mat-list-item data-cy="projectlist-list-item" [attr.id]="project.name" [class.selected-project]="isSelected(project)" class="mat-list-item" *ngFor="let project of displayProjects" (click)="selectProject(project)">
+      <div data-cy="projectlist-project-delete" class="delete-icon" (click)="openDialog(project, $event)"><mat-icon>close</mat-icon></div>
+      <span data-cy="projectlist-project-name" matListItemTitle>{{ project.name }}</span>
+      <span data-cy="projectlist-project-description" matListItemLine style="white-space: nowrap;">{{ project.description }}
+        <mat-spinner *ngIf="isVisualized(project)" diameter="20" class="list-spinner"></mat-spinner>
+      </span>
+    </mat-list-item>
+  </mat-list>
+</div>

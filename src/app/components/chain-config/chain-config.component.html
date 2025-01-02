@@ -1,0 +1,33 @@
+<div cdkDropListGroup>
+    <div class="example-container">
+      <h3>Verfügbare Module</h3>
+  
+      <div
+        cdkDropList
+        cdkDropListOrientation="horizontal"
+        [cdkDropListData]="available"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListEnterPredicate]="noReturnPredicate">
+        @for (item of available; track item) {
+          <div class="example-box" cdkDrag>{{item.name}}</div>
+        }
+      </div>
+    </div>
+  
+    <div class="example-container">
+      <h3>Gewählte Module</h3>
+  
+      <div
+        cdkDropList
+        cdkDropListOrientation="horizontal"
+        [cdkDropListData]="selected"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of selected; track item) {
+          <div class="example-box" cdkDrag>{{item.name}}<button (click)="onDelete(item)" mat-icon-button><mat-icon>close</mat-icon></button></div>
+        }
+      </div>
+    </div>
+  </div>
+  

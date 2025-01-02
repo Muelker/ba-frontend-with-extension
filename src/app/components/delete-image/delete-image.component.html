@@ -1,0 +1,9 @@
+<h2 class="marg">Löschen</h2>
+<hr class="hr-context">
+<div data-cy="delete-image-question" class="center padding-text">
+  Willst du das Bild wirklich löschen?
+</div>
+<div mat-dialog-actions class="button-container">
+  <button data-cy="delete-image-button-yes" class="marg marg-bottom marg-top button" mat-raised-button color="primary" mat-button mat-dialog-close cdkFocusInitial (click)="closeDialogYes()">Ja</button>
+  <button data-cy="delete-image-button-no" class="marg marg-bottom marg-top button" mat-raised-button color="primary" mat-button mat-dialog-close (click)="closeDialogNo()">Nein</button>
+</div>

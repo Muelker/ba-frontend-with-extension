@@ -1,0 +1,9 @@
+<h2 class="marg">Löschen</h2>
+<hr class="hr-context">
+<div data-cy="delete-project-question" class="center padding-text">
+  Willst du das Projekt wirklich löschen?
+</div>
+<div mat-dialog-actions>
+  <button data-cy="delete-project-button-yes" class="marg marg-bottom marg-top button" mat-raised-button color="primary" mat-button mat-dialog-close cdkFocusInitial (click)="closeDialogYes()">Ja</button>
+  <button data-cy="delete-project-button-no" class="marg marg-bottom marg-top button" mat-raised-button color="primary" mat-button mat-dialog-close (click)="closeDialogNo()">Nein</button>
+</div>

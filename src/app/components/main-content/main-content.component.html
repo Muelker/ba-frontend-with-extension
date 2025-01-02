@@ -1,0 +1,11 @@
+<mat-tab-group class="tab-group-container" mat-stretch-tabs="false" mat-align-tabs="start" [(selectedIndex)]="selectedTabIndex">
+    <mat-tab data-cy="tab-project-details" label="Projekt Details">
+        <app-project-detail data-cy="project-details"></app-project-detail>
+    </mat-tab>
+    <mat-tab data-cy="tab-visualization" label="Visualisierung">
+        <app-visualization data-cy="visualization" class="visualization"></app-visualization>
+    </mat-tab>
+    <mat-tab data-cy="tab-canvas" label="Bild Details">
+        <app-image-details data-cy="canvas" class="canvas"></app-image-details>
+    </mat-tab>
+</mat-tab-group>

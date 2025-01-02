@@ -1,0 +1,10 @@
+<h2 class="marg">Name ändern</h2>
+<hr class="hr-context">
+<form data-cy="edit-image-name-form" (ngSubmit)="onSubmit()" class="edit-name" #projectForm="ngForm">
+    <mat-form-field>
+        <mat-label>Neuer Name</mat-label>
+        <input data-cy="edit-image-name-name-input" matInput [(ngModel)]="edit.name" name="text" required>
+    </mat-form-field>
+
+  <button class="marg marg-bottom marge-top button" mat-raised-button color="primary" type="submit" [disabled]="!projectForm.valid">Speichern</button>
+</form>

@@ -1,0 +1,24 @@
+<h2 class="marg">Neues Projekt</h2>
+<hr class="hr-context">
+<form class="create-project-form" data-cy="create-project-form" id="create-project-form" (ngSubmit)="onSubmit()" #projectForm="ngForm">
+  <mat-form-field>
+    <mat-label>Projektname</mat-label>
+    <input data-cy="create-project-name" id="create-project-name" matInput [(ngModel)]="project.name" name="name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Beschreibung</mat-label>
+    <textarea data-cy="create-project-description" id="create-project-description" matInput [(ngModel)]="project.description" name="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>AI-Modell</mat-label>
+    <mat-select data-cy="create-project-select" id="create-project-select" color="primary" [(ngModel)]="project.ai_model_id" name="ai_model_id" required="">
+      <mat-option data-cy="create-project-option" id="create-project-option" *ngFor="let model of aiModels" [value]="model.id" matTooltip="{{model.description}}">
+        {{model.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button data-cy="create-project-save-button" class="marg marg-bottom button marg-top" mat-raised-button color="primary" type="submit" [disabled]="!projectForm.valid">Projekt erstellen</button>
+</form>

@@ -1,0 +1,15 @@
+<h2 class="marg">Text ändern</h2>
+<hr class="hr-context">
+<form data-cy="change-overlays-form" (ngSubmit)="onSubmit()" class="change-overlays" #projectForm="ngForm">
+    <mat-form-field>
+        <mat-label>Neuer Text</mat-label>
+        <input data-cy="change-Overlays-new-text" matInput [(ngModel)]="overlay.newText" name="text" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Notizen zur Änderung</mat-label>
+        <textarea data-cy="change-Overlays-notes" id="create-project-description" matInput [(ngModel)]="overlay.notes" name="notes"></textarea>
+    </mat-form-field>
+
+  <button class="marg marg-bottom marge-top button" mat-raised-button color="primary" type="submit" [disabled]="!projectForm.valid">Speichern</button>
+</form>

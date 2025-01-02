@@ -1,0 +1,60 @@
+.marg {
+    margin: 25px;
+    height: 36px;
+}
+.delete-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    //background-color: red;
+    color: #17365c;
+    cursor: pointer;
+    padding: 5px;
+
+    &:hover {
+        color: #2962ff;
+    }
+}
+
+.project-list-container {
+    overflow: auto;
+    scrollbar-width: thin;
+    height: calc(100% - 162px);
+    scrollbar-gutter: stable;
+}
+
+
+.project-mat-list mat-list-item {
+    background-color: #e7e7e7;
+    border-radius: 4px;
+    margin: 5%;
+    box-sizing: border-box;
+    overflow: auto;
+    width: 90%;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.project-mat-list mat-list-item:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.selected-project {
+    background-color: darkgray !important;
+}
+
+.list-spinner {
+    margin-left: auto;
+}
+
+.search-form-field {
+    margin: 5%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 87%;
+}
+
+.search-button-clear {
+    margin: 5px;
+}

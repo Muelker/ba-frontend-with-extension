@@ -1,0 +1,10 @@
+<h2 class="marg">Notizen ändern</h2>
+<hr class="hr-context">
+<form data-cy="edit-image-notes-form" (ngSubmit)="onSubmit()" class="edit-notes" #projectForm="ngForm">
+    <mat-form-field>
+        <mat-label>Neue Notizen</mat-label>
+        <textarea data-cy="edit-image-notes-notes-input" matInput [(ngModel)]="edit.notes" name="text" required></textarea>
+    </mat-form-field>
+
+  <button class="marg marg-bottom marge-top button" mat-raised-button color="primary" type="submit" [disabled]="!projectForm.valid">Speichern</button>
+</form>

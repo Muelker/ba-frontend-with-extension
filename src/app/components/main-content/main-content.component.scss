@@ -1,0 +1,20 @@
+.tab-group-container {
+    overflow: auto;
+    height: 100%;
+}
+
+.visualization {
+    display: flex;
+    height: 100%;
+}
+
+app-project-detail {
+    flex-grow: 1;
+    height: 100%;
+    padding-left: 30px;
+    width: 100%;
+}
+
+:host ::ng-deep .tab-group-container .mat-mdc-tab-body-content {
+    scrollbar-gutter: stable;
+}

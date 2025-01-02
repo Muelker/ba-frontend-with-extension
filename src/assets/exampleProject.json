@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "project1",
+        "description": "this is a test project,the name is project1hehegggggg",
+        "ai_model_id": 1,
+        "status": "PENDING",
+        "images_nr": 2,
+        "images": [
+        {
+            "id": 23,
+            "project_id": 1,
+            "name": "p1_1",
+            "old_name": "image1",
+            "type": "png",
+            "image_url": " http://127.0.0.1:8001/media/project_1/p1_1.png",
+            "created_at": "2023-12-22T10:11:41.657997Z",
+            "updated_at": "2023-12-22T10:11:41.658044Z"
+        },
+        {
+            "id": 24,
+            "project_id": 1,
+            "name": "p1_2",
+            "old_name": "image2",
+            "type": "jpg",
+            "image_url": " http://127.0.0.1:8001/media/project_1/p1_2.jpg",
+            "created_at": "2023-12-22T10:11:41.680432Z",
+            "updated_at": "2023-12-22T10:11:41.680485Z"
+        } 
+        ],
+        "created_at": "2023-12-21T18:29:29.965864Z",
+        "updated_at": "2023-12-21T19:48:43.658715Z"
+    },
+    {
+        "id": 2,
+        "name": "project2",
+        "description": "this is project2",
+        "ai_model_id": 2,
+        "status": "PENDING",
+        "images_nr": 2,
+        "images": [
+        {
+            "id": 21,
+            "project_id": 2,
+            "name": "p2_1",
+            "old_name": "image1",
+            "type": "png",
+            "image_url": " http://127.0.0.1:8001/media/project_2/p2_1.png",
+            "created_at": "2023-12-22T10:10:47.274522Z",
+            "updated_at": "2023-12-22T10:10:47.274618Z"
+            },
+        {
+            "id": 22,
+            "project_id": 2,
+            "name": "p2_2",
+            "old_name": "image2",
+            "type": "jpg",
+            "image_url": " http://127.0.0.1:8001/media/project_2/p2_2.jpg",
+            "created_at": "2023-12-22T10:10:47.302050Z",
+            "updated_at": "2023-12-22T10:10:47.302115Z"
+        } 
+        ],
+        "created_at": "2023-12-21T23:38:47.496306Z",
+        "updated_at": "2023-12-21T23:38:47.496452Z"
+    }
+]

@@ -1,0 +1,34 @@
+<div class="top-container">
+    <div class="register-container" style="text-align: center;">
+        <form data-cy="register-form" (ngSubmit)="onRegister()">
+            <div>
+                <label data-cy="register-name-lable">Name:</label>
+                <br>
+                <input data-cy="register-name-input" type="text" [(ngModel)]="registerData.first_name" name="name">
+            </div>
+            <div>
+                <label data-cy="register-lastname-lable">Nachname:</label>
+                <br>
+                <input data-cy="register-lastname-input" type="text" [(ngModel)]="registerData.last_name" name="lastname">
+            </div>
+            <div>
+                <label data-cy="register-email-lable">E-Mail:</label>
+                <br>
+                <input data-cy="register-email-input" type="email" [(ngModel)]="registerData.email" name="email" required>
+            </div>
+            <div>
+                <label data-cy="register-username-lable">Benutzername:</label>
+                <br>
+                <input data-cy="register-username-input" type="text" [(ngModel)]="registerData.username" name="username" required>
+            </div>
+            <div>
+                <label data-cy="register-password-lable">Passwort:</label>
+                <br>
+                <input data-cy="register-password-input" type="password" [(ngModel)]="registerData.password" name="password" required>
+            </div>
+            <button data-cy="register-submit" mat-raised-button color="primary" type="submit">Registrieren</button>   
+        </form>
+        <br>
+        <a data-cy="register-to-login" (click)="goToLogin()" style="color: rgb(141, 174, 16)">Ich habe schon ein Konto!</a>
+    </div>
+</div>

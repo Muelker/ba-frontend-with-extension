@@ -1,0 +1,25 @@
+<h2 class="marg">Dashboard</h2>
+<hr class="hr-context">
+<div class="table-container">
+    <table class="project-details-table">
+        <tr *ngIf="projects.length != 0">
+            <th>Projektname</th>
+            <th>Beschreibung</th>
+            <th>Status</th>
+            <th>Anzahl Bilder</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let project of projects">
+            <td data-cy="project-name-lable">{{ project.name }}</td>
+            <td data-cy="project-name">{{ project.description }}</td>
+            <td data-cy="project-name-lable" *ngIf="isProjectVisualized(project)">Visualisiert</td>
+            <td data-cy="project-name-lable" *ngIf="!isProjectVisualized(project) && isProjectPartlyVisualized(project)">Teilweise visualisiert</td>
+            <td data-cy="project-name-lable" *ngIf="!isProjectVisualized(project) && !isProjectPartlyVisualized(project)">Nicht visualisiert</td>
+            <td data-cy="project-name">{{ project.images.length }}</td>
+            <td data-cy="project-name">
+                <button data-cy="project-ditails-button-discription-edit" aria-label="Clear" (click)="goToProject(project)" mat-icon-button color="accent">
+                <mat-icon >forward</mat-icon>
+                </button></td>
+        </tr>
+    </table>
+</div>
