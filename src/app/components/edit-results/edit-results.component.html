@@ -10,30 +10,30 @@
     <div class="interaction" id="interaction">
         <div class="textInput" id="textInputDiv">
             <input type="text" id="textInput" placeholder="Neuer Text">
-            <button id="textInputSubmit" (click)="textInputSubmit()">Submit</button>
+            <button id="textInputSubmit" title="Daten übertragen (Enter)" (click)="textInputSubmit()">Submit</button>
         </div>
         <div class="nextStepDisplay" id="nextStepDisplayDiv">
             <p id="nextStepDisplay">Warte auf Eingabe</p>
         </div>
         <div class="editSelection" id="editSelectionDiv">
-            <button id="editTextSelect" (click)="editText()">Text Bearbeiten</button>
-            <button id="editBoxSelect" (click)="editBox()">Textbox Bearbeiten</button>
-            <button id="editStop" (click)="exitMode()">Beenden</button>
+            <button id="editTextSelect" title="Text Bearbeiten (t)" (click)="editText()">Text Bearbeiten</button>
+            <button id="editBoxSelect" title="Box Bearbeiten (b)" (click)="editBox()">Textbox Bearbeiten</button>
+            <button id="editStop" title="Speichern (Enter)" (click)="exitMode()">Beenden</button>
         </div>
         <div class="newTextControl" id="newTextControlDiv">
-            <button id="newTextBoxEdit" (click)="editBox()">Textbox Bearbeiten</button>
-            <button id="newTextNextStep" (click)="newTextNext()">Weiter</button>
-            <button id="newTextStop" (click)="exitMode()">Abbrechen</button>
+            <button id="newTextBoxEdit" title="Box Bearbeiten (e)" (click)="editBox()">Textbox Bearbeiten</button>
+            <button id="newTextNextStep" title="Box speichern (Enter)" (click)="newTextNext()">Weiter</button>
+            <button id="newTextStop" title="Abbrechen (ESC)" (click)="exitMode()">Abbrechen</button>
         </div>
         <div class="editBoxControl" id="editBoxControlDiv">
-            <button id="editBoxAgain" (click)="editBox()">Textbox Bearbeiten</button>
-            <button id="saveEditedBox" (click)="saveEditedBox()">Speichern</button>
-            <button id="boxEditStop" (click)="forceExitMode()">Abbrechen</button>
+            <button id="editBoxAgain" title="Box Bearbeiten (b)" (click)="editBox()">Textbox Bearbeiten</button>
+            <button id="saveEditedBox" title="Box speichern (Enter)" (click)="saveEditedBox()">Speichern</button>
+            <button id="boxEditStop" title="Bearbeiten Abbrechen (ESC)" (click)="forceExitMode()">Abbrechen</button>
         </div>
         <div class="confirmation" id="confirmDiv">
             <label id="confirmText">Wirklich löschen?</label>
-            <button id="confirmTrue" (click)="confirmDelete()">JA</button>
-            <button id="confirmFalse" (click)="denyDelete()">NEIN</button>
+            <button id="confirmTrue" title="Löschen bestätigen (Enter)" (click)="confirmDelete()">JA</button>
+            <button id="confirmFalse" title="Nicht Löschen (ESC)" (click)="denyDelete()">NEIN</button>
         </div>
     </div>
     <div class="exit">
@@ -42,7 +42,7 @@
         <button id="stopEdits" (click)="exitEditMode()">Ohne Speichern beenden</button>
     </div>
     <div class="resultButtons" id="resultButtons">
-        <button id="addText" class="newText" (click)="createNewText()">Text hinzufügen</button>
+        <button id="addText" title="Neuen Text erstellen (n)" class="newText" (click)="createNewText()">Text hinzufügen</button>
         <!--Result-Buttons will be placed here-->
         <button id="result{{idl + 1}}Button" 
                 (click)="clickOnResult(idl+1)" 
@@ -64,8 +64,8 @@
         <canvas class="myCanvas" id="overlay" width="800" height="400"></canvas>
         <div class="control" id="controls">
             <!-- Buttons for the controls -->
-            <button id="editText" (click)="editSelect()">Bearbeiten</button>
-            <button id="removeText" (click)="removeText()">Entfernen</button>
+            <button id="editText" title="Bearbeiten (e)" (click)="editSelect()">Bearbeiten</button>
+            <button id="removeText" title="Entfernen (entf / Backspace)" (click)="removeText()">Entfernen</button>
         </div>
         <div class="textInputHovering" id="textInputHoveringDiv">
             <input type="text" id="textInputHover" placeholder="Neuer Text">
