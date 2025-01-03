@@ -95,7 +95,6 @@ export class EditResultsComponent implements OnInit{
 
   constructor(private router: Router,
               private exchange: ExchangeService,
-              private projectService: ProjectService
             ){}
 
   // Setup Functions - used for setting up the page and its contents
@@ -531,7 +530,10 @@ export class EditResultsComponent implements OnInit{
   }
   
   // Functionality Functions - provide required functions, without being directly interactive
-   
+
+   /*
+  Function used to create a new button with the specidfied ID
+  */
   createNewButton(id: number)
   {
     var leftOffset: number = 0;
@@ -594,6 +596,9 @@ export class EditResultsComponent implements OnInit{
       "height: 20px;");
   }
 
+  /*
+  Function used to handle when a result is clicked (overlay or list)
+  */
   clickOnResult(id: number)
   {
     if(!this.newMode)
