@@ -98,4 +98,4 @@ After uploading images, these images are availabnle to be selected in the "Visua
 
 1. Select an image from the galery at the top.
 2. select the "Ergebnis bearbeiten" (engl: "edit result") button
-3. Use the features of the new UI to create, Edit or delete any recognitions on the image.
+3. Use the features of the new UI to create, edit or delete any recognitions on the image.
